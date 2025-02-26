@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+        body {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("{% static 'images/studying/studying.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+            z-index: -1; 
+        }
+
+
+        .text-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            text-align: left;
+        }
+
+        /* Centering the image */
+        .img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .img {
+            mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 0, rgba(0,0,0,0.2) 100%);
+            width: 550px;
+            height: 550px;
+        }
+        a:hover {
+            color: hotpink;
+          }
+        .shortcuts{
+            font-size:13px;
+            position:absolute;
+            margin-right:300px;
+            margin-top:50px;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studying-Notebook</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/apps.js' %}"></script>
+</head>
+
+<body>
+    <div class="text-container">
+        <p>Studying-Notebook</p>
+        <br>
+        <p style="font-size:21px;">Go back to see all <a href="/apps">applications.</a></p>
+        <p style="font-size:21px;">The GitHub link is <a href="https://github.com/Rafail-Koutalis/Studying_Notebook.git"> this</a>.</p>
+        <p style="font-size:21px;">In the video you see a small preview of the application's useage</p>
+        <br>
+        <div class="shortcuts">
+            <p style="text-decoration:underline;">Keyboard shortcuts :</p>
+            <p>'1' → <a href="{% url 'payments' %}">Payroll</a> app.</p>
+            <p>'2' → <a href="{% url 'study' %}">Notebook</a> app.</p>
+            <p>'Backspace' → <a href="{% url 'apps' %}">App menu</a>.</p>
+            <p>'🏠' → <a href="{% url '/' %}">Homepage</a>.</p>
+        </div>
+    </div>
+
+    <div class="img-container">
+        <img class="img" src="{% static 'images/studying/video_study.gif' %}" alt="Greeting UI">
+    </div>
+</body>
+</html>

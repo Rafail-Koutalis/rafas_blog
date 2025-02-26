@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+        body {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url("{% static 'images/homepage_allapps/homepage.jpg' %}");
+            margin: 0;
+            overflow: hidden;
+        }
+        a:hover{
+            color: hotpink;
+        }
+        .a_2{
+            color:red;
+        }
+        .a_2:hover{
+            color:yellow;
+        }
+        span{
+            color:black;
+        }
+        a:hover span {
+            color: yellow; 
+        }
+        .secondbody{
+            position: relative;
+            display: block;
+            align-items: left;
+            justify-content: left;
+            font-size:17px;
+            margin-right:1200px;
+            margin-bottom:100px;
+        }
+        .mainbody{
+            margin-left:10px;
+            margin-bottom:300px;
+            display: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <script src="{% static 'js/home.js'%}"></script>
+</head>
+<body>
+    <div class="secondbody">
+        <h1>Hi, my Name is <span><a target="_blank" href="https://www.instagram.com/raf.spoon/">Rafail Koutalis</a></span>.</h1>
+        <p style="color:black;">.</p>
+        <p>◦ I am a BSc graduate of History-Archaeology at <a target="_blank" href="https://www.auth.gr/en/">AUTH</a>, and 2 years ago,</p>
+        <p>◦ I decided to chase my dream and pursue a carrer as a Developer.</p>
+        <p>◦ To achieve that, I enrolled and currently pursue a BSc degree in CS at <a target="_blank" href="https://www.eap.gr/en/">H.O.University</a>.</p>
+        <p>◦ My hobbies are -obviously- programming, mountain biking, riding, listening to music, and many more.</p>
+        <p>◦ You will find some more info about my previous non-tech jobs <a target="_blank" href="/apps/bio">here</a>.</p>
+        <p>◦ Currently I just got employed as a Junior Developer at <a target="_blank" href="https://www.proset.gr/">Proset</a>.</p>
+        <p>◦ I am currently using/learning Python(Django),JS(React/Vue),HTML,CSS.</p>
+    </div>
+    
+    <div class="mainbody">
+        <p><span style="color:black;">...</span>Homepage</p>
+        <br>
+        <p style="display:inline;">Check o<span style="color:black;">ut my</span></p>
+        <p><a style="text-decoration:underline" href="/apps">Applica<span style="text-decoration: underline;">tions.</span></a></p>
+        <p style="color: black;">-</p>
+        <p style="font-size:17px;">Or press 'Enter' to go  <span style="color:black;">to the</span><a class="a_2" href="{% url 'apps' %}"> App menu</a></p>
+        <p style="font-size:17px;">Or press 'J' to go to my <a class="a_2" href="{% url 'bio' %}"> biography</a></p>
+    </div>
+</body>
+
+</html>
